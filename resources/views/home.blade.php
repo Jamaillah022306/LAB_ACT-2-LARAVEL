@@ -27,7 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* Decorative background */
         body::before {
             content: '';
             position: fixed;
@@ -50,13 +49,11 @@
             pointer-events: none;
         }
 
-        /* Top accent bar */
         .accent-bar {
             height: 5px;
             background: linear-gradient(90deg, var(--teal-dark), var(--teal-light), var(--amber), var(--amber-light));
         }
 
-        /* Navigation */
         nav {
             display: flex;
             align-items: center;
@@ -76,18 +73,6 @@
             gap: 0.75rem;
         }
 
-        .nav-icon {
-            width: 38px;
-            height: 38px;
-            background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-icon svg { width: 20px; height: 20px; fill: white; }
-
         .nav-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
@@ -95,18 +80,6 @@
             font-weight: 700;
         }
 
-        .nav-badge {
-            background: var(--teal);
-            color: white;
-            font-size: 0.7rem;
-            padding: 0.2rem 0.7rem;
-            border-radius: 20px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        /* Hero section */
         .hero {
             max-width: 900px;
             margin: 0 auto;
@@ -184,7 +157,13 @@
             font-weight: 300;
         }
 
-        /* CTA Button */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -219,10 +198,6 @@
             box-shadow: 0 8px 28px rgba(13,148,136,0.45);
         }
 
-        .btn-arrow { font-size: 1.1rem; transition: transform 0.2s; }
-        .btn-primary:hover .btn-arrow { transform: translateX(4px); }
-
-        /* Divider */
         .divider {
             width: 60px;
             height: 3px;
@@ -231,7 +206,6 @@
             margin: 3rem auto;
         }
 
-        /* Feature cards */
         .features {
             max-width: 900px;
             margin: 0 auto;
@@ -288,7 +262,6 @@
             line-height: 1.5;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -305,19 +278,19 @@
         <div class="nav-brand">
             <span class="nav-title">EduRegister</span>
         </div>
-
     </nav>
 
     <section class="hero">
         <h1><span>Student Registration System</span></h1>
 
-        <a href="{{ route('register') }}" class="btn-primary">
-            Go to Registration Form
-        </a>
+        <div class="btn-group">
+            <a href="{{ route('register.form') }}" class="btn-primary">
+                Go to Registration Form
+            </a>
+            <a href="{{ route('registrations') }}" class="btn-primary">
+                View Registered Students
+            </a>
+        </div>
     </section>
-
-
-
-
 </body>
 </html>

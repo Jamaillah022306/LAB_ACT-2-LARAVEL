@@ -474,7 +474,5 @@
             </div>
         </div>
     </main>
-
-    <footer>© 2026 EduRegister · Built with Laravel & Blade Templates</footer>
 </body>
 </html>
